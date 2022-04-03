@@ -51,11 +51,11 @@ function IndexPage() {
           ))}
         </Carousel>
 
-        <div className='mobile-text text-center'>
-            <div className='promo-grid_text'>
+        <div className='featured-text_contain text-center'>
+            <div className='featured-text'>
                 <h1>Shop New Arrivals</h1>
                 <p>Our coolest new items are waiting for you!</p>
-                <Link className="shop-btn">Shop Now</Link>
+                <Link className="btn-small">Shop Now</Link>
             </div>
         </div>
       </div>
