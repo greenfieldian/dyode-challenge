@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const navigation = {
     customerService: [
@@ -18,7 +19,7 @@ const navigation = {
     social: [
         {
           name: 'Facebook',
-          href: '#',
+          link: '#',
           class: '',
           icon: (props) => (
             <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -32,7 +33,7 @@ const navigation = {
         },
         {
           name: 'Instagram',
-          href: '#',
+          link: '#',
           class: '',
           icon: (props) => (
             <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -46,7 +47,7 @@ const navigation = {
       },
         {
           name: 'Twitter',
-          href: '#',
+          link: '#',
           class: '',
           icon: (props) => (
             <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -67,9 +68,9 @@ export default function Footer() {
                     <ul role="list" className="">
                         {navigation.customerService.map((item) => (
                             <li key={item.name}>
-                                <a href={item.href} className="">
+                                <Link to={item.link} className="">
                                     {item.name}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -79,23 +80,25 @@ export default function Footer() {
                     <ul role="list" className="">
                         {navigation.company.map((item) => (
                             <li key={item.name}>
-                                <a href={item.href} className="">
+                                <Link to={item.link} className="">
                                     {item.name}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
             <div className="social_links">
-                <span>Follow Us</span>
-                <div className="flex space-x-6 md:order-2">
-                    {navigation.social.map((item) => (
-                        <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
-                            <span className="sr">{item.name}</span>
-                            <item.icon className="" aria-hidden="true" />
-                        </a>
-                    ))}
+                <div>
+                    <span>Follow Us</span>
+                    <div className="flex space-x-6 md:order-2">
+                        {navigation.social.map((item) => (
+                            <a key={item.name} href={item.link} className="text-gray-400 hover:text-gray-300">
+                                <span className="sr">{item.name}</span>
+                                <item.icon className="" aria-hidden="true" />
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
