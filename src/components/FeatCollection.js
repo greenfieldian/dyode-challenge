@@ -4,7 +4,7 @@ export default function FeatCollection() {
   return (
     <div className='promo-grid_container'>
         <div className='promo-grid_bg'>
-
+            
         </div>
         <div className='promo-grid_content'>
             <div className='promo-grid_text'>

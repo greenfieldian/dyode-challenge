@@ -1,0 +1,157 @@
+$primary-color: #10504F;
+$light-grey: #EFEFEF;
+$heading-font: 'Pacifico', cursive;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    line-height: 16.8px;
+}
+
+h1 {
+    font-family: $heading-font;
+    font-size: 26px;
+    line-height: 46px;
+}
+
+h2 {
+    font-family: $heading-font;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a  {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* Utility */
+
+.container {
+    padding: 0 20px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    width: auto;
+    background-color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* End Utility */
+
+
+
+/* Hero Section */
+
+.hero-section {
+    .hero-img_contain {
+        height: 227px;
+    
+        img {
+            height: 100%;
+        }
+    }
+
+    .mobile-text {
+        background-color: $light-grey;
+        color: $primary-color;
+        padding: 12px 0px 38px;
+
+        p {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+/* End Hero Section */
+
+/* Categories Section */
+
+.categories-section {
+    color: #fff;
+    padding: 20px 0;
+
+    .categories-wrapper {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .cat {
+        position: relative;
+        height: 215px;
+        width: 49%;
+
+        .cat-text {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: $primary-color;
+        }
+    }
+    .womens-cat {
+        background: url('../images/womens-img.png') no-repeat;
+        background-size: 100% 215px;
+    }
+    .mens-cat {
+        background: url('../images/mens-img.png') no-repeat;
+        background-size: 100% 215px;
+    }
+    .accessories-cat {
+        width: 100%;
+        margin-top: 10px;
+        background: url('../images/accessories-img_mobile.png') no-repeat;
+        background-size: 100% 215px;
+    }
+}
+
+/* End Categories Section */
+
+
+/* Promo Bar */
+.promo-container {
+    background-color: #000;
+    padding: 15px 0;
+    color: #fff;
+
+    p {
+        letter-spacing: .1em;
+    }
+}
+/* Promo Bar */
