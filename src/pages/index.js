@@ -7,7 +7,7 @@ import Newsletter from "../components/Newsletter"
 import ProductCard from "../components/ProductCard";
 import { Link } from "gatsby";
 import {Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from "swiper";
+import SwiperCore, { Navigation } from "swiper";
 import { Icon } from '@iconify/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,6 +15,8 @@ import 'swiper/css/navigation';
 import heroImg1 from '../images/hero-img1.png'
 import heroImg2 from '../images/hero-img2.png'
 import heroImg3 from '../images/hero-img3.png'
+
+SwiperCore.use(Navigation)
 
 const carousel = {
   heroSection: [
@@ -103,10 +105,12 @@ function IndexPage() {
             
             <Swiper
               slidesPerView={2}
-              modules={Navigation}
+              modules={ Navigation }
               observer={true}
               observeParents={true}
               navigation
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swiper) => console.log(swiper)}
               breakpoints= {{
                 768: {
                   width: 768,
@@ -127,10 +131,10 @@ function IndexPage() {
                 <ProductCard />
               </SwiperSlide>
 
-              <div class="swiper-button-prev">
+              <div class="">
                 <Icon icon="ion-chevron-left" className="arrow-icon" height="100%"></Icon>
               </div>
-            <div class="swiper-button-next">
+            <div class="">
                 <Icon icon="ion-chevron-right" className="arrow-icon" height="100%"></Icon>
               </div>
             </Swiper>
