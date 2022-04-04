@@ -672,11 +672,27 @@ footer {
     align-items: center;
 }
 .swiper {
-    width: 90% !important;
-    display: inline-block;
+
 }
+
 .swiper-button-prev, .swiper-button-next {
-    display: inline-block;
+    color: #000 !important;
+    height: 10px !important;
+}
+.swiper-button-prev {
+    left: 0 !important;
+}
+
+.swiper-button-prev::after {
+    font-size: 20px !important;
+}
+
+.swiper-button-next::after {
+    font-size: 20px !important;
+}
+
+.swiper-button-next {
+    right: 0 !important;
 }
 
 .arrow-icon {
@@ -685,6 +701,7 @@ footer {
 @include media('>tablet') {
     .swiper-slide {
         width: 24% !important;
+        
     }
 
     .arrow-icon {

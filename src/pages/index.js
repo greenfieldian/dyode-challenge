@@ -130,13 +130,6 @@ function IndexPage() {
               <SwiperSlide>
                 <ProductCard />
               </SwiperSlide>
-
-              <div class="">
-                <Icon icon="ion-chevron-left" className="arrow-icon" height="100%"></Icon>
-              </div>
-            <div class="">
-                <Icon icon="ion-chevron-right" className="arrow-icon" height="100%"></Icon>
-              </div>
             </Swiper>
             </div>
         </div>
