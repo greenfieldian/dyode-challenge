@@ -133,6 +133,11 @@ button {
     }
 }
 
+.btn-promo {
+    background-color: $primary-color;
+    @extend .btn-small
+}
+
 .featured-text_contain {
     background-color: $light-grey;
     color: $primary-color;
@@ -164,7 +169,8 @@ header {
     }
 
     .logo {
-        max-width: 55px;
+        width: 55px;
+        max-width: 95px;
         margin-left: 25px;
     }
 
@@ -189,6 +195,10 @@ header {
                 color: #fff;
                 margin: 0 20px;
             }
+        }
+        .logo {
+            margin-left: 0;
+            width: 100%;
         }
     }
 }
@@ -273,6 +283,7 @@ header {
     .womens-cat {
         background: url('../images/womens-img.png') no-repeat;
         background-size: 100% 215px;
+        max-width: 1000px;
     }
     .mens-cat {
         background: url('../images/mens-img.png') no-repeat;
@@ -420,6 +431,12 @@ header {
                 width: 100%;
             }
         }
+
+        p {
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 26px;
+        }
     }
     
 }
@@ -452,6 +469,10 @@ footer {
     }
 
     @include media('>tablet') {
+        font-size: 18px;
+        line-height: 40px;
+        padding: 62px 0;
+
         .footer-wrapper {
             display: flex;
             justify-content: space-between;
@@ -516,10 +537,23 @@ footer {
     }
 
     @include media ('>tablet') {
-        .product-img {
-            margin-left: auto;
+        .product-title {
+            font-size: 22px;
+            line-height: 26px;
+        }
+        .product-cat {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        .product-price {
+            font-size: 26px;
+            line-height: 46px;
         }
     }
+}
+
+.product-img {
+    max-width: 1000px;
 }
 /* End Product Card */
 

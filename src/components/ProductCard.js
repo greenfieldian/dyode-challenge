@@ -7,7 +7,7 @@ export default function ProductCard() {
     <Link>
         <div>
             <StaticImage 
-                src="../images/product-img.jpg"
+                src="../images/product-img.png"
                 alt='Product image'
                 placeholder='blurred'
                 className='product-img'
