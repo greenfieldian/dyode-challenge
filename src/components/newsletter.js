@@ -1,12 +1,14 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
+import MailIcon from "../images/mail-icon.svg"
+
 export default function Newsletter() {
   return (
     <div className='newsletter'>
         <div className="container">
-            <div>
-                <span></span>
+            <div className='text-center'>
+                <span><img src={MailIcon} className="mail-icon"/></span>
                 <h2>Sign Up & Stay Connected</h2>
             </div>
             <div className="newsletter-content">

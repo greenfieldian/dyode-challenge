@@ -6,7 +6,8 @@ import Layout from "../components/Layout"
 import Newsletter from "../components/Newsletter"
 import ProductCard from "../components/ProductCard";
 import { Link } from "gatsby";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, Navigation } from 'swiper/react';
+import { Icon } from '@iconify/react';
 import 'swiper/css';
 
 import heroImg1 from '../images/hero-img1.png'
@@ -96,28 +97,41 @@ function IndexPage() {
           <div className="section-header">
             <h1><span className="desktop-hidden">Shop</span>New Arrivals</h1>
           </div>
-          <Swiper
-            slidesPerView={2}
-            breakpoints= {{
-              768: {
-                width: 768,
-                slidesPerView: 4,
-              },
-            }}
-          >
-            <SwiperSlide>
-              <ProductCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard />
-            </SwiperSlide>
-          </Swiper>
+          <div className="swiper-container">
+            <div class="swiper-button-prev">
+                <Icon icon="ion-chevron-left" className="arrow-icon" height="100%"></Icon>
+            </div>
+            <Swiper
+              slidesPerView={2}
+              modules={{ Navigation}}
+              navigation= {{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              breakpoints= {{
+                768: {
+                  width: 768,
+                  slidesPerView: 4,
+                },
+              }}
+            >
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard />
+              </SwiperSlide>
+            </Swiper>
+            <div class="swiper-button-next">
+                <Icon icon="ion-chevron-right" className="arrow-icon" height="100%"></Icon>
+              </div>
+            </div>
         </div>
       </div>
       {/* End New Arrivals Carousel */}
