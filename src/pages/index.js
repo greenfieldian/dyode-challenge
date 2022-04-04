@@ -6,9 +6,11 @@ import Layout from "../components/Layout"
 import Newsletter from "../components/Newsletter"
 import ProductCard from "../components/ProductCard";
 import { Link } from "gatsby";
-import { Swiper, SwiperSlide, Navigation } from 'swiper/react';
+import {Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from "swiper";
 import { Icon } from '@iconify/react';
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 import heroImg1 from '../images/hero-img1.png'
 import heroImg2 from '../images/hero-img2.png'
@@ -98,16 +100,13 @@ function IndexPage() {
             <h1><span className="desktop-hidden">Shop</span>New Arrivals</h1>
           </div>
           <div className="swiper-container">
-            <div class="swiper-button-prev">
-                <Icon icon="ion-chevron-left" className="arrow-icon" height="100%"></Icon>
-            </div>
+            
             <Swiper
               slidesPerView={2}
-              modules={{ Navigation}}
-              navigation= {{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              }}
+              modules={Navigation}
+              observer={true}
+              observeParents={true}
+              navigation
               breakpoints= {{
                 768: {
                   width: 768,
@@ -127,10 +126,14 @@ function IndexPage() {
               <SwiperSlide>
                 <ProductCard />
               </SwiperSlide>
-            </Swiper>
+
+              <div class="swiper-button-prev">
+                <Icon icon="ion-chevron-left" className="arrow-icon" height="100%"></Icon>
+              </div>
             <div class="swiper-button-next">
                 <Icon icon="ion-chevron-right" className="arrow-icon" height="100%"></Icon>
               </div>
+            </Swiper>
             </div>
         </div>
       </div>
