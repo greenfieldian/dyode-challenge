@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'gatsby'
 
 const navigation = {
@@ -58,15 +58,32 @@ const navigation = {
     ],
 }
 
+
 export default function Footer() {
+
+const [isActive1, setActive1] = useState("false");
+
+const handleToggle1 = () => {
+    setActive1(!isActive1);
+};
+
+const [isActive2, setActive2] = useState("false");
+
+const handleToggle2 = () => {
+    setActive2(!isActive2);
+};
+
   return (
     <footer>
         <div className='container'>
             <div className="footer-wrapper">
                 <div className="internal">
                     <div className="footer-list-contain">
-                        <span>Customer Service</span>
-                        <ul className="">
+                        <div className='flex list-header_contain'>
+                            <span>Customer Service</span>
+                            <button className={isActive1 ? "toggle-button-open" : "toggle-button-closed"} onClick={handleToggle1}></button>
+                        </div>
+                        <ul className={isActive1 ? null : "hidden"}>
                             {navigation.customerService.map((item) => (
                                 <li key={item.name}>
                                     <Link to={item.link} className="">
@@ -77,8 +94,11 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="footer-list-contain">
-                        <span>Company</span>
-                        <ul className="">
+                        <div className='flex list-header_contain'>
+                            <span>Company</span>
+                            <button className={isActive2 ? "toggle-button-open" : "toggle-button-closed"} onClick={handleToggle2}></button>
+                        </div>
+                        <ul className={isActive2 ? null : "hidden"}>
                             {navigation.company.map((item) => (
                                 <li key={item.name}>
                                     <Link to={item.link} className="">
