@@ -6,6 +6,8 @@ import Layout from "../components/Layout"
 import Newsletter from "../components/Newsletter"
 import ProductCard from "../components/ProductCard";
 import { Link } from "gatsby";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 import heroImg1 from '../images/hero-img1.png'
 import heroImg2 from '../images/hero-img2.png'
@@ -38,14 +40,14 @@ function IndexPage() {
       <div className="hero-section">
         <Carousel showThumbs={false} showStatus={false}>
           {carousel.heroSection.map((item) => (
-            <div>
+            <div className="hero-container">
               <div className="hero-img_contain">
                 <img src={item.image} className="hero-img"/>
               </div>
-              <div className="hidden">
+              <div className="hero-text">
                 <h1>{item.heading}</h1>
                 <p>{item.subtext}</p>
-                <Link>Shop Now</Link>
+                <Link className="btn-small">Shop Now</Link>
               </div>
             </div>
           ))}
@@ -86,25 +88,33 @@ function IndexPage() {
       {/* End Categories */}
 
       {/* New Arrivals Carousel */}
-      <div>
+      <div className="new-arrivals">
         <div className="container">
-          <div className="section-header text-center">
-            <h1>Shop New Arrivals</h1>
+          <div className="section-header">
+            <h1><span className="desktop-hidden">Shop</span>New Arrivals</h1>
           </div>
-          <Carousel showStatus={false}>
-            <div>
+          <Swiper
+            slidesPerView={2}
+            breakpoints= {{
+              768: {
+                width: 768,
+                slidesPerView: 4,
+              },
+            }}
+          >
+            <SwiperSlide>
               <ProductCard />
-            </div>
-            <div>
+            </SwiperSlide>
+            <SwiperSlide>
               <ProductCard />
-            </div>
-            <div>
+            </SwiperSlide>
+            <SwiperSlide>
               <ProductCard />
-            </div>
-            <div>
+            </SwiperSlide>
+            <SwiperSlide>
               <ProductCard />
-            </div>
-          </Carousel>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
       {/* End New Arrivals Carousel */}

@@ -10,12 +10,13 @@ export default function ProductCard() {
                 src="../images/product-img.jpg"
                 alt='Product image'
                 placeholder='blurred'
+                className='product-img'
             />
         </div>
-        <div>
-            <div className='product-title'></div>
-            <div className='product-cat'></div>
-            <div className='product-price'></div>
+        <div className="product-text">
+            <div className='product-title'>Product Title</div>
+            <div className='product-cat'>Women's T-shirt</div>
+            <div className='product-price'>$19.99</div>
         </div>
     </Link>
   )

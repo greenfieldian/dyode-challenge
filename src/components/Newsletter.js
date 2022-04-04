@@ -9,11 +9,11 @@ export default function Newsletter() {
                 <span></span>
                 <h2>Sign Up & Stay Connected</h2>
             </div>
-            <div className="form text and input">
-                <div>
+            <div className="newsletter-content">
+                <div className="newsletter-text">
                     <p>Sign up for the newsletter and get 20% off! Gain access to exclusive offers and be the first to know when new stuff drops!</p>
                 </div>
-                <form>
+                <form className='newsletter-form'>
                     <input type="email" placeholder="Enter Your Email Address" className="subscribe-input"/>
                     <Link className="btn-large">Subscribe</Link>
                 </form>

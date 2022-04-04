@@ -10,7 +10,7 @@ export default function FeatCollection() {
             <img src={featuredImg}/>
         </div>
         <div className='featured-text_contain'>
-            <div className='featured-text text-center'>
+            <div className='featured-text'>
                 <h1>Our Favorite Tees</h1>
                 <p>Everyday tees you need!</p>
                 <Link className="btn-small">Shop Now</Link>
