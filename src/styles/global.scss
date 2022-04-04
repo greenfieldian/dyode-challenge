@@ -83,6 +83,10 @@ button {
     text-align: center;
 }
 
+.text-white {
+    color: #fff !important;
+}
+
 .mobile-hidden {
     display: none;
 
@@ -119,7 +123,12 @@ button {
 .btn-large {
     padding: 14px 28px;
     border: 1px solid #fff;
-    @extend .btn
+    @extend .btn;
+
+    @include media('>desktop') {
+        padding: 21px 0;
+        border: 2px solid #fff;
+    }
 }
 
 .btn-small {
@@ -194,11 +203,22 @@ header {
             a {
                 color: #fff;
                 margin: 0 20px;
+                font-size: 17px;
+                letter-spacing: .1em;
             }
         }
         .logo {
             margin-left: 0;
             width: 100%;
+        }
+    }
+
+    @include media('>desktop') {
+        .header-links {
+            a {
+                font-size: 20px;
+                line-height: 24px;
+            }
         }
     }
 }
@@ -310,7 +330,7 @@ header {
             background-size: 100% 325px;
         }
         .accessories-cat {
-            background: url('../images/accessories-img_desktop.png')
+            background: url('../images/accessories-img_desktop.png');
             margin-top: 0;
             background-size: 100% 325px;
         }
@@ -340,8 +360,16 @@ header {
     text-align: center;
     padding: 20px 0;
 
+    .section-header {
+        margin-bottom: 12px;
+    }
+
     @include media('>tablet') {
         padding: 50px 0;
+
+        .section-header {
+            margin-bottom: 24px;
+        }
     }
 }
 /* End New Arrivals */
@@ -415,7 +443,21 @@ header {
     }
 
     @include media('>tablet') {
+        h2 {
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 26px;
+        }
+    }
+
+    @include media('>desktop') {
         text-align: left;
+        padding: 75px 0;
+
         .newsletter-content {
             display: flex;
             justify-content: space-between;
@@ -426,17 +468,25 @@ header {
         .newsletter-form {
             display: flex;
             width: 48%;
+            max-height: 60px;
+            justify-content: space-between;
 
             .subscribe-input {
-                display: inline-flex;
-                width: 100%;
+                display: inline-block;
+                width: 78%;
+                border: none;
+                font-size: 22px;
+                padding-left: 17px;
             }
-        }
 
-        p {
-            font-weight: 300;
-            font-size: 22px;
-            line-height: 26px;
+            .btn-large {
+                width: 20%;
+            }
+
+            .subscribe-input::placeholder {
+                color: #C6C6C6;
+            }
+
         }
     }
     

@@ -7,7 +7,7 @@ const navigation = {
   links: [
     { name: "Men's", link: "#" },
     { name: "Women's", link: "#" },
-    { name: "Accessorie's", link: "#" },
+    { name: "Accessories", link: "#" },
     { name: "Sale!", link: "#" },
   ],
 

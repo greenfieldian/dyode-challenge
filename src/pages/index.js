@@ -19,16 +19,19 @@ const carousel = {
       image: heroImg1,
       heading: "Shop New Arrivals",
       subtext: "Our coolest new items are waiting for you!",
+      class: "text-green"
     },
     {
       image: heroImg2,
       heading: "Our Fave Tees",
       subtext: "Shop all of our favorites.",
+      class: "text-white"
     },
     {
       image: heroImg3,
       heading: "Men’s Tees",
       subtext: "Find the perfect shirt",
+      class: "text-white"
     }
   ]
 }
@@ -45,8 +48,8 @@ function IndexPage() {
                 <img src={item.image} className="hero-img"/>
               </div>
               <div className="hero-text">
-                <h1>{item.heading}</h1>
-                <p>{item.subtext}</p>
+                <h1 className={item.class}>{item.heading}</h1>
+                <p className={item.class}>{item.subtext}</p>
                 <Link className="btn-small">Shop Now</Link>
               </div>
             </div>
